@@ -14,20 +14,20 @@
 
 int main(void){
   DDRA = 0xFF;  //--> 0b11111111  --> 255
-  u16 DELAY=200;
+  u16 DELAY=100;
   while(1){
     for(u8 i=0 ; i<8 ; i++)
     {
       SET_BIT(PORTA,i);
       _delay_ms(DELAY);
-      CLEAR_BIT(PORTA,i);
     }
-    for(u8 i=6 ; i>0 ; i--)
+    for(u8 i=7 ; i>0 ; i--)
     {
-      SET_BIT(PORTA,i);
-      _delay_ms(DELAY);
       CLEAR_BIT(PORTA,i);
+      _delay_ms(DELAY);
     }
+    CLEAR_BIT(PORTA,0);
+    _delay_ms(DELAY);
   }
 
   return 0;
