@@ -38,6 +38,7 @@
 #define DIO_u8_HIGH			1
 #define DIO_u8_LOW			0
 
+#define delay               100
 
 void DIO_voidSetPortDirection(u8 Copy_u8Port , u8 Copy_u8Direction);
 void DIO_voidSetPortValue(u8 Copy_u8Port , u8 Copy_u8Value);

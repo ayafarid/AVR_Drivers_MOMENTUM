@@ -217,12 +217,12 @@ void DIO_voidFlash(u8 Copy_u8Port)
     {
         DIO_voidSetPinValue(DIO_u8_PORTA,i,DIO_u8_HIGH);
     }
-    _delay_ms(500);
+    _delay_ms(delay);
     for(u8 i=0 ; i<8 ; i++)
     {
         DIO_voidSetPinValue(DIO_u8_PORTA,i,0);
     }
-    _delay_ms(500);
+    _delay_ms(delay);
 }
 void DIO_voidShiftRight(u8 Copy_u8Port)
 {
@@ -230,10 +230,10 @@ void DIO_voidShiftRight(u8 Copy_u8Port)
     for(u8 i=0 ; i<8 ; i++)
     {
         DIO_voidSetPinValue(DIO_u8_PORTA,i,DIO_u8_HIGH);
-        _delay_ms(200);
+        _delay_ms(delay);
     }
     DIO_voidSetPortValue(DIO_u8_PORTA,DIO_u8_PORT_LOW);
-    _delay_ms(200);
+    _delay_ms(delay);
 }
 void DIO_voidShiftLeft(u8 Copy_u8Port)
 {
@@ -241,10 +241,10 @@ void DIO_voidShiftLeft(u8 Copy_u8Port)
     {
         DIO_voidSetPinValue(DIO_u8_PORTA,i,DIO_u8_HIGH);
         DIO_voidSetPinValue(DIO_u8_PORTA,j,DIO_u8_HIGH);
-        _delay_ms(500);
+        _delay_ms(delay);
     }
     DIO_voidSetPortValue(DIO_u8_PORTA,DIO_u8_PORT_LOW);
-    _delay_ms(500);
+    _delay_ms(delay);
 }
 void DIO_voidMedium(u8 Copy_u8Port)
 {
@@ -252,10 +252,10 @@ void DIO_voidMedium(u8 Copy_u8Port)
     {
         DIO_voidSetPinValue(DIO_u8_PORTA,i,DIO_u8_HIGH);
         DIO_voidSetPinValue(DIO_u8_PORTA,j,DIO_u8_HIGH);
-        _delay_ms(500);
+        _delay_ms(delay);
     }
     DIO_voidSetPortValue(DIO_u8_PORTA,DIO_u8_PORT_LOW);
-    _delay_ms(500);
+    _delay_ms(delay);
 }
 void DIO_voidRightLeft(u8 Copy_u8Port)
 {
@@ -263,9 +263,9 @@ void DIO_voidRightLeft(u8 Copy_u8Port)
     for(u8 i=7 ; i>0 ; i--)
     {
         DIO_voidSetPinValue(DIO_u8_PORTA,i,DIO_u8_HIGH);
-        _delay_ms(200);
+        _delay_ms(delay);
     }
     DIO_voidSetPinValue(DIO_u8_PORTA,0,DIO_u8_HIGH);
-    _delay_ms(200);
+    _delay_ms(delay);
     DIO_voidSetPortValue(DIO_u8_PORTA,DIO_u8_PORT_LOW);
 }
