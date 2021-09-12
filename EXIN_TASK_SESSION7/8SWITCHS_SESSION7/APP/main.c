@@ -16,28 +16,32 @@ int main(void){
 	EXTI_voidEnable(EXTI_u8_LINE1,EXTI_u8_ON_CHANGE);
 	GIE_voidEnable();
 	while(1){
+		switch(CopyCounter){
+		case DIO__u8FlashState:
+			DIO_voidFlash(DIO_u8_PORTA);
+			break;
+		case DIO_u8ShiftRight:
+			DIO_voidShiftRight(DIO_u8_PORTA);
+			break;
+		case DIO_u8RightLeft:
+			DIO_voidRightLeft(DIO_u8_PORTA);
+			break;
+		case DIO_U8ShiftLeft:
+			DIO_voidShiftLeft(DIO_u8_PORTA);
+			break;
+		case DIO_u8Mediume:
+			DIO_voidMedium(DIO_u8_PORTA);
+			break;
+		default:
+			break;
+		}
 	}
 
 
 	return 0;
 }
 void TOG_LED_ISR1(void){
-	switch(CopyCounter)
-	{
-	case DIO__u8FlashState:
-		DIO_voidFlash(DIO_u8_PORTA);
-		break;
-	case DIO_u8ShiftRight:
-		DIO_voidShiftRight(DIO_u8_PORTA);
-		break;
-	case DIO_u8RightLeft:
-		DIO_voidShiftLeft(DIO_u8_PORTA);
-		break;
-	case DIO_U8ShiftLeft:
-		DIO_voidRightLeft(DIO_u8_PORTA);
-		break;
-	case DIO_u8Mediume:
-		DIO_voidMedium(DIO_u8_PORTA);
-		break;
-	}
+	CopyCounter++;
+	if(CopyCounter==6)
+		CopyCounter=1;
 }
